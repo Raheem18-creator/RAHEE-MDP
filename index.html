@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Bot Linker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 WhatsApp Bot Linker</h1>
+            <p>Generate a pairing code to link your WhatsApp bot instantly.</p>
+        </div>
+
+        <form id="pairCodeForm">
+            <div class="input-group">
+                <label for="phoneNumber">Your WhatsApp Number (e.g., 255763111390):</label>
+                <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter number with country code, no '+'" required>
+            </div>
+            <button type="submit" id="submitBtn">Generate Pairing Code</button>
+        </form>
+
+        <div id="result" class="result-box hidden">
+            <p id="statusMessage"></p>
+            <div id="codeArea">
+                <span id="pairingCodeDisplay"></span>
+                <button id="copyCodeBtn" title="Copy to clipboard" class="copy-btn">Copy</button>
+            </div>
+            <p id="sessionIdDisplay"></p>
+        </div>
+
+        <div class="instructions-section">
+            <h2>How to Link Your Bot:</h2>
+            <ol>
+                <li>Enter your **WhatsApp number** (full international format, no `+` or spaces).</li>
+                <li>Click **"Generate Pairing Code"**.</li>
+                <li>Open **WhatsApp** on your primary phone.</li>
+                <li>Go to **Linked Devices** > **Link a Device**.</li>
+                <li>Tap on **"Link with phone number instead"**.</li>
+                <li>Enter the **pairing code** displayed above.</li>
+                <li>Once connected, the bot will send your session string to your WhatsApp. Keep it safe!</li>
+            </ol>
+            <p class="warning-message">⚠️ **Important:** Your session credentials will be sent to your WhatsApp number. Ensure you copy them and keep them secure. They will also be stored temporarily on the server.</p>
+        </div>
+    </div>
+
+    <footer>
+        Powered by Baileys & Express
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
